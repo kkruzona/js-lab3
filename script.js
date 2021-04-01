@@ -1,1 +1,42 @@
-test
+let submissions =[
+    {
+        name: 'Jane',
+        score: 95,
+        date: '2020-01-24',
+        passed: true
+    },
+    {
+        name: 'Joe',
+        score: 77,
+        date: '2018-05-14',
+        passed: true
+    },
+    {
+        name: 'Jack',
+        score: 59,
+        date: '2019-07-05',
+        passed: false
+    },
+    {
+        name: 'Jill',
+        score: 88,
+        date: '2020-04-22',
+        passed: true
+    }
+];
+
+for(let submission of submissions){
+    console.log(
+        `Name: ${submission.name} 
+        Score: ${submission.score} 
+        Date: ${submission.date} 
+        Passed: ${submission.passed}`)
+}
+
+function addSubmission(array , newName , newScore , newDate){
+
+}
+
+// function deleteSubmissionByIndex(array , index){
+    
+// }
