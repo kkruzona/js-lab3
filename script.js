@@ -86,19 +86,20 @@ function addSubmission(array, newName, newScore, newDate) {
         const result = array.find(submission => submission.name === name);
         console.log(result);
     }
-    findSubmissionByName(submissions, 'Jill');
+    findSubmissionByName(submissions, 'Phil');
 
-//     function findLowestScore(array) {
-//         // trying to find lowest score related to other scores in the array
-//         array.forEach(function(submission, index) {
-//             console.log(submission, index);
-//         })
-//         array.forEach(function(submissions.score, index) {
-//             console.log(submissions.score, index);
-
-// }}};
-// findLowestScore(submissions);
-//     // console.log(submissions);
+    function findLowestScore(array) {
+    let lowestScore = 100;
+    let lowestScoreResult;
+    array.forEach(element => {
+        if(element.score < lowestScore){
+            lowestScore = element.score;
+            lowestScoreResult = element;
+        }
+    })
+        console.log(lowestScoreResult);
+    }
+findLowestScore(submissions);
 
     function findAverageScore(array) {
         // math for finding averages
@@ -122,68 +123,3 @@ function addSubmission(array, newName, newScore, newDate) {
         console.log(newArray);
     }
     filter90AndAbove(submissions);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    // addSubmission(newPerson);
-    // addSubmission = ('Phil', 60, '2020-01-22')
-
-
-// function addSubmission(array, newName , newScore , newDate){
-//     let newPerson =[
-//         {
-//             name: newName,
-//             score: newScore,
-//             date: newDate
-//         }
-//     ];
-//     submissions = submissions.push(newPerson);
-//     console.log(submissions);
-// }
-// addSubmission('Phil', 60, '2020-01-22');
-
-// if (this.passed.value >= 60){
-//     console.log("true");
-// }
-// else{
-//     console.log("false");
-// }
-
-// function deleteSubmissionByIndex(array , index){
-    
-// }
-
-
-// function addSubmission(array, newName , newScore , newDate){
-//     let newPerson =[
-//         {
-//             name: 'Phil',
-//             score: 60,
-//             date: '2020-01-22',
-//         }
-//     ];
-//     submissions = submissions.push(newPerson);
-//     console.log(submissions);
-//     if (submissions.passed >= 60){
-//     return true;
-//     }
-//     else{
-//     return false;
-//     }
-// }
