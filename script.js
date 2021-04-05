@@ -84,9 +84,45 @@ function addSubmission(array, newName, newScore, newDate) {
 
     function findSubmissionByName(array , name) {
         const result = array.find(submission => submission.name === name);
+        console.log(result);
     }
     findSubmissionByName(submissions, 'Jill');
-    console.log(result);
+
+//     function findLowestScore(array) {
+//         // trying to find lowest score related to other scores in the array
+//         array.forEach(function(submission, index) {
+//             console.log(submission, index);
+//         })
+//         array.forEach(function(submissions.score, index) {
+//             console.log(submissions.score, index);
+
+// }}};
+// findLowestScore(submissions);
+//     // console.log(submissions);
+
+    function findAverageScore(array) {
+        // math for finding averages
+        var sum = 0;
+        for (var i = 0; i < submissions.length; i++) {
+        sum += submissions[i].score;
+        }
+        var average = sum / submissions.length;
+        console.log(average);
+    }
+        findAverageScore(submissions);
+
+    function filterPassing(array) {
+        const passingScore = array.filter(submissions => submissions.score > 60);
+        console.log(passingScore);
+    }
+    filterPassing(submissions);
+
+    function filter90AndAbove(array) {
+        const newArray = array.filter(submissions => submissions.score > 90);
+        console.log(newArray);
+    }
+    filter90AndAbove(submissions);
+
 
 
 
