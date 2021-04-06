@@ -38,18 +38,18 @@ function addSubmission(array, newName, newScore, newDate) {
             name: newName,
             score: newScore,
             date: newDate,
-            passed: true
+            passed: newScore >= 60 //shorthand way to do the true/false rather than the if statments 
+            //for passed because everything evaluates to true or false anyways
         }
 
         array.push(newPerson);
-        console.log(submissions);
-        if (newPerson.score >= 60){
-            newPerson.passed = true;
-        }
-        else{
-            newPerson.passed = false;
-        }
-
+//         console.log(submissions);
+//         if (newPerson.score >= 60){
+//             newPerson.passed = true;
+//         }
+//         else{
+//             newPerson.passed = false;
+//         }
     }
     addSubmission(submissions, 'Phil', 65, '2020-01-22');
 
@@ -84,12 +84,12 @@ function addSubmission(array, newName, newScore, newDate) {
 
     function findSubmissionByName(array , name) {
         const result = array.find(submission => submission.name === name);
-        console.log(result);
+        return result
     }
     findSubmissionByName(submissions, 'Phil');
 
     function findLowestScore(array) {
-    let lowestScore = 100;
+    let lowestScore = array[0].score;//better to use a real value in the array and the first one is the best starting point
     let lowestScoreResult;
     array.forEach(element => {
         if(element.score < lowestScore){
@@ -97,29 +97,29 @@ function addSubmission(array, newName, newScore, newDate) {
             lowestScoreResult = element;
         }
     })
-        console.log(lowestScoreResult);
+        return lowestScoreResult
     }
 findLowestScore(submissions);
 
     function findAverageScore(array) {
         // math for finding averages
         var sum = 0;
-        for (var i = 0; i < submissions.length; i++) {
+        for (let i = 0; i < submissions.length; i++) { //not using var anymore
         sum += submissions[i].score;
         }
         var average = sum / submissions.length;
-        console.log(average);
+        return average //very important to pay attention to if the question is asking for return or console
     }
         findAverageScore(submissions);
 
     function filterPassing(array) {
-        const passingScore = array.filter(submissions => submissions.score > 60);
-        console.log(passingScore);
+        const passingScore = array.filter(submissions => submissions.score >= 60);
+        return passingScore
     }
     filterPassing(submissions);
 
     function filter90AndAbove(array) {
-        const newArray = array.filter(submissions => submissions.score > 90);
-        console.log(newArray);
+        const newArray = array.filter(submissions => submissions.score >= 90);
+        return newArray;
     }
     filter90AndAbove(submissions);
